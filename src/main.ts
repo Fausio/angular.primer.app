@@ -6,9 +6,10 @@ import { AppModule } from './app/app.module';
 platformBrowserDynamic().bootstrapModule(AppModule)
   .catch(err => console.error(err));
 
-  function writeValue(val: string = "default value") {
-    console.log(`Value: ${val ?? "Fallback value"}`)
+  function writeValue(val: string  , ...extraInfo: string[]) {
+    console.log(`Value: ${val}, Extras: ${extraInfo}`)
     }
 
-    writeValue("London");
-    writeValue();
+    writeValue("London", "Raining", "Cold");
+    writeValue("Paris", "Sunny");
+    writeValue("New York");
