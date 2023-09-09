@@ -6,7 +6,7 @@ import { AppModule } from './app/app.module';
 platformBrowserDynamic().bootstrapModule(AppModule)
   .catch(err => console.error(err));
 
-  function writeValue(val?: string ) {
+  function writeValue(val: string = "default value") {
     console.log(`Value: ${val ?? "Fallback value"}`)
     }
 
