@@ -38,12 +38,7 @@ let hat = new DiscountProduct("Hat", 100, 10);
 
 let boots = new Product("Boots", 100, "Snow Gear");
 
-
-
-
-
-hat.printDetails();
-
+console.log(`Hat is a Product? ${boots instanceof DiscountProduct}`);
 
 
 
