@@ -18,9 +18,6 @@ class Product {
     this.category = category;
   }
 
-
-
-
   printDetails() {
     if (this.category != undefined) {
       console.log(`Name: ${this.name}, Price: ${this.price}, ` +
@@ -31,7 +28,14 @@ class Product {
   }
 }
 
-let hat = new Product("Hat", 100);
+class DiscountProduct extends Product {
+  constructor(name: string, price: number, private discount: number) {
+    super(name, price - discount);
+  }
+}
+
+let hat = new DiscountProduct("Hat", 100, 10);
+
 let boots = new Product("Boots", 100, "Snow Gear");
 
 
