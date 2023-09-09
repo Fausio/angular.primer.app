@@ -1,19 +1,14 @@
-let firstBool = true;
-let secondBool = false;
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
-let firstString = "This is a string";
-let secondString = 'And so is this';
+import { AppModule } from './app/app.module';
 
 
-let place: string | undefined | null;
-console.log("Place value: " + place + " Type: " + typeof(place));
+platformBrowserDynamic().bootstrapModule(AppModule)
+  .catch(err => console.error(err));
 
-place = "London";
-console.log("Place value: " + place + " Type: " + typeof(place));
+  function writeValue(val?: string | null) {
+    console.log(`Value: ${val ?? "Fallback value"}`)
+    }
 
-place = null;
-console.log("Place value: " + place + " Type: " + typeof(place));
-
-
-console.log("Place value: " + place + " Type: " + typeof(place));
-console.log(`Place value: ${place} Type: ${typeof(place)}`);
+    writeValue("London");
+    writeValue(null);
