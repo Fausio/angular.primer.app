@@ -6,21 +6,32 @@ import { AppModule } from './app/app.module';
 platformBrowserDynamic().bootstrapModule(AppModule)
   .catch(err => console.error(err));
 
-let myArray: (number | string | boolean)[] = [100, "Adam", true];
-let otherArray = [...myArray, 200, "Bob", false];
+let hat = {
+  name: "Hat",
+  price: 100
+};
 
-let sum: number = otherArray.filter(val => typeof (val) == "number")
-  .reduce((total: number, val) => total + (val as number), 0);
 
-console.log(`Sum: ${sum}`);
-let sumeNumbers = 0;
+let boots = {
+  name: "Boots",
+  price: 100,
+  category: "Snow Gear"
+}
 
-let mySume = otherArray.forEach((value, index) => {
 
-  if (typeof (value) == "number") { 
-    sumeNumbers +=    value;
+
+function printDetails(product: { name: string, price: number, category?: string }) {
+  if (product.category != undefined) {
+    console.log(`Name: ${product.name}, Price: ${product.price}, ` +
+      `Category: ${product.category}`);
+  } else {
+    console.log(`Name: ${product.name}, Price: ${product.price}`);
   }
+}
 
-})
+printDetails(hat);
+printDetails(boots);
 
-console.log("total: " + sumeNumbers);
+
+
+
