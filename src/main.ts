@@ -6,13 +6,10 @@ import { AppModule } from './app/app.module';
 platformBrowserDynamic().bootstrapModule(AppModule)
   .catch(err => console.error(err));
 
-function composeString(val: string): string {
-  return `Composed string: ${val}`;
+function getUKCapital(): string {
+  return "London";
 }
-
-function writeValue(val?: string) {
-  console.log(composeString(val ?? "Fallback value"));
+function writeCity(f: () => string) {
+  console.log(`City: ${f()}`)
 }
-
-writeValue("London");
-writeValue();
+writeCity(getUKCapital);
